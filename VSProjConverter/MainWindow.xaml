@@ -1,0 +1,32 @@
+﻿<Window x:Class="VSProjConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VSProjConverter" Height="130" Width="472" ResizeMode="CanMinimize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="4" />
+        </Style>    
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Name="path" VerticalAlignment="Center" Margin="5" 
+                   ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}">
+            C:\Users\User\Documents\Visual Studio 2010\Projects
+        </TextBlock>
+        <Button Grid.Row="0" Grid.Column="1" Name="browse" Click="browse_Click" ToolTip="Select solution root folder" >Browse</Button>
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="VS2008" Click="VS2008_Click" HorizontalAlignment="Stretch" 
+                ToolTip="Convert *.sln file and *.csproj to Visual Studio 2008 format" >
+            Back to the VS2008
+        </Button>
+    </Grid>
+</Window>
